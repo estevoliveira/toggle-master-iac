@@ -29,7 +29,7 @@ resource "aws_internet_gateway" "igw" {
 }
 
 resource "aws_eip" "nat" {
-  vpc = true
+  #vpc = true
   depends_on = [aws_internet_gateway.igw]
   tags = { Name = "${var.env}-nat-eip" }
 }
