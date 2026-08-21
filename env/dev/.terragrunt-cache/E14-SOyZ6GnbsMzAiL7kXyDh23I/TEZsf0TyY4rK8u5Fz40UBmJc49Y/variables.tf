@@ -46,3 +46,14 @@ variable "allocated_storage" {
   default = 20
   
 }
+
+# dynamodb variables
+variable "dynamodb_key" {
+  type = string
+}
+
+
+# Variables for the sqs module
+variable "name_sqs" {
+  type = string
+}

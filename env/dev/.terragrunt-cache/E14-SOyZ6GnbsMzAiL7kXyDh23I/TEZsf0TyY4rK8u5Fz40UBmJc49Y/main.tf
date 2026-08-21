@@ -28,3 +28,22 @@ module "rds" {
   
 }
 
+# elasticache
+module "elasticache" {
+  source             = "./elasticache"
+  private_subnet_ids = module.vpc.private_subnet_ids
+  env               = var.env
+}
+
+# dynamodb
+module "dynamodb" {
+  source = "./dynamodb"
+  env    = var.env
+  dynamodb_key = var.dynamodb_key
+}
+
+# SQS
+module "sqs" {
+  source = "./sqs"
+  name_sqs = var.name_sqs
+}

@@ -27,5 +27,11 @@ inputs = {
   db_password = "123456678"
   instance_class = "db.t3.micro"
   engine_version = "16.10"
+
+  #dynamodb_table
+  dynamodb_key = "event_id"
+
+  #SQS
+  name_sqs = "toggle-master-sqs"
 }
 
