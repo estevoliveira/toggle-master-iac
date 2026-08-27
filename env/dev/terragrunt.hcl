@@ -39,4 +39,3 @@ inputs = {
   cluster_name = "toggle-cluster"
   cluster_version = 1.36
 }
-
