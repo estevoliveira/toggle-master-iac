@@ -4,7 +4,8 @@ remote_state {
     bucket = "challenge3-terraform-state"
     key    = "${path_relative_to_include()}/terraform.tfstate"
     region = "us-east-1"
-    dynamodb_table = "terraform-locks"
+    //dynamodb_table = "terraform-locks" -> mudança feita pois esta depreciados o uso do dynamodb como lock
+    use_lockfile = true
     encrypt        = true
   }
 }
@@ -33,5 +34,9 @@ inputs = {
 
   #SQS
   name_sqs = "toggle-master-sqs"
+
+  #EKS
+  cluster_name = "toggle-cluster"
+  cluster_version = 1.36
 }
 
