@@ -1,1 +1,10 @@
 .terraform/
+env/dev/.terraform.lock.hcl
+env/dev/.terragrunt-cache/
+
+env/test/.terraform.lock.hcl
+env/test/.terragrunt-cache/
+
+module/.terraform.lock.hcl
+module/backend/.terraform.lock.hcl
+module/backend/.terraform/
