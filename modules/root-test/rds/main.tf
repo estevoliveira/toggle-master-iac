@@ -2,7 +2,7 @@
 resource "aws_db_subnet_group" "rds_subnet_group" {
   name       = "${var.env}-db-subnets"
   subnet_ids = var.private_subnet_ids
-  tags = { Name = "${var.env}-db-subnets" }
+  tags       = { Name = "${var.env}-db-subnets" }
 }
 
 # SG restrito para o RDS
@@ -29,16 +29,16 @@ resource "aws_security_group" "rds_sg" {
 }
 
 resource "aws_db_instance" "postgres" {
-  identifier              = "${var.env}-rds"
-  engine                  = var.db_engine
-  engine_version          = var.db_engine_version
-  instance_class          = var.db_instance_class
-  allocated_storage       = var.db_allocated_storage
-  username                = var.db_username
-  password                = var.db_password
-  db_subnet_group_name    = aws_db_subnet_group.rds_subnet_group.name
-  vpc_security_group_ids  = [aws_security_group.rds_sg.id]
-  skip_final_snapshot     = true
-  publicly_accessible     = false
-  tags = { Name = "${var.env}-rds" }
+  identifier             = "${var.env}-rds"
+  engine                 = var.db_engine
+  engine_version         = var.db_engine_version
+  instance_class         = var.db_instance_class
+  allocated_storage      = var.db_allocated_storage
+  username               = var.db_username
+  password               = var.db_password
+  db_subnet_group_name   = aws_db_subnet_group.rds_subnet_group.name
+  vpc_security_group_ids = [aws_security_group.rds_sg.id]
+  skip_final_snapshot    = true
+  publicly_accessible    = false
+  tags                   = { Name = "${var.env}-rds" }
 }

@@ -15,17 +15,17 @@ module "vpc" {
 
 # EKS
 module "eks" {
-  source = "./eks"
-  env                  = var.env
-  cluster_version      = var.cluster_version
-  cluster_name         = var.cluster_name
+  source          = "./eks"
+  env             = var.env
+  cluster_version = var.cluster_version
+  cluster_name    = var.cluster_name
 
-  subnet_ids   = module.vpc.private_subnet_ids
+  subnet_ids = module.vpc.private_subnet_ids
 
-  node_instance_types  = var.node_instance_types
-  desired_size         = var.desired_size
-  min_size             = var.min_size
-  max_size             = var.max_size
+  node_instance_types = var.node_instance_types
+  desired_size        = var.desired_size
+  min_size            = var.min_size
+  max_size            = var.max_size
 }
 
 # ECR

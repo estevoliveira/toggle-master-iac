@@ -3,7 +3,7 @@ variable "private_subnet_ids" {
 }
 
 variable "db_password" {
-  type = string
+  type      = string
   sensitive = true
 }
 
@@ -20,20 +20,20 @@ variable "vpc_id" {
 }
 
 variable "db_engine" {
-  type = string
+  type    = string
   default = "postgres"
 }
 variable "db_engine_version" {
-  type = string
+  type    = string
   default = "16.4"
 }
 
 variable "db_instance_class" {
-  type = string
+  type    = string
   default = "db.t3.micro"
 }
 variable "db_allocated_storage" {
-  type = number
+  type    = number
   default = 20
-  
+
 }

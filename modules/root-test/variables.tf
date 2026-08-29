@@ -20,7 +20,7 @@ variable "azs" {
 # Variables for the rds module
 
 variable "db_password" {
-  type = string
+  type      = string
   sensitive = true
 }
 
@@ -29,22 +29,22 @@ variable "db_username" {
 }
 
 variable "engine" {
-  type = string
+  type    = string
   default = "postgres"
 }
 variable "engine_version" {
-  type = string
+  type    = string
   default = "16.4"
 }
 
 variable "instance_class" {
-  type = string
+  type    = string
   default = "db.t3.micro"
 }
 variable "allocated_storage" {
-  type = number
+  type    = number
   default = 20
-  
+
 }
 
 # dynamodb variables
@@ -62,7 +62,7 @@ variable "name_sqs" {
 
 # Variables for the eks module
 variable "cluster_version" {
-  type = string
+  type    = string
   default = "1.27"
 }
 
@@ -71,21 +71,21 @@ variable "cluster_name" {
 }
 
 variable "node_instance_types" {
-  type = list(string)
+  type    = list(string)
   default = ["t3.medium"]
 }
 
 variable "desired_size" {
-  type = number
+  type    = number
   default = 2
 }
 
 variable "min_size" {
-  type = number
+  type    = number
   default = 1
 }
 
 variable "max_size" {
-  type = number
+  type    = number
   default = 3
 }
