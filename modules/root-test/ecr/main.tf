@@ -44,7 +44,6 @@ resource "aws_iam_role" "github_actions_ecr" {
   })
 }
 
-data "aws_caller_identity" "current" {}
 
 resource "aws_iam_policy" "github_actions_ecr_push" {
   name = "github-actions-ecr-push"
