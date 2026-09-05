@@ -98,7 +98,7 @@ jobs:
 
       - name: Run TFLint
         working-directory: .
-        run: tflint --config=.tflint.hcl --recursive
+        run: tflint --config="$GITHUB_WORKSPACE/.tflint.hcl" --recursive
 
       # --------------------------------------------------
       # Checkov
