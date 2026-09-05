@@ -1,6 +1,9 @@
 name: Terraform CI
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -67,7 +70,7 @@ jobs:
 
       - name: Terragrunt Init
         run: terragrunt init
-        
+
       # --------------------------------------------------
       # Terraform Validate
       # --------------------------------------------------
