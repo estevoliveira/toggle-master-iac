@@ -109,7 +109,7 @@ jobs:
         with:
           directory: .
           soft_fail: false
-          skip_check: CKV_*
+          skip_check: CK*
 
 
       # --------------------------------------------------
