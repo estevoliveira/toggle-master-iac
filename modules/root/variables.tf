@@ -1,4 +1,9 @@
 # varables for the root module
+variable "region" {
+  type    = string
+  default = "us-east-1"
+}
+
 variable "env" {
   type = string
 }
