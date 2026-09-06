@@ -14,3 +14,4 @@ modules/backend/terraform.tfstate.backup
 modules/root-iam/.terraform.lock.hcl
 modules/root-iam/.terraform/
 modules/root-iam/terraform.tfstate
+modules/root-iam/terraform.tfstate.backup
