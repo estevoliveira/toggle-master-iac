@@ -5,6 +5,9 @@ env/dev/.terragrunt-cache/
 env/test/.terraform.lock.hcl
 env/test/.terragrunt-cache/
 
+env/prod/.terraform.lock.hcl
+env/prod/.terragrunt-cache/
+
 module/.terraform.lock.hcl
 module/backend/.terraform.lock.hcl
 module/backend/.terraform/

@@ -11,6 +11,8 @@ variable "env" {
   type = string
 }
 
+
+
 variable "db_username" {
   type = string
 }
@@ -36,4 +38,8 @@ variable "db_allocated_storage" {
   type    = number
   default = 20
 
+}
+
+variable "rds_databases" {
+  type = set(string)
 }

@@ -55,12 +55,14 @@ variable "allocated_storage" {
 # dynamodb variables
 variable "dynamodb_key" {
   type = string
+  default = null
 }
 
 
 # Variables for the sqs module
 variable "name_sqs" {
   type = string
+  default = null
 }
 
 
@@ -73,6 +75,7 @@ variable "cluster_version" {
 
 variable "cluster_name" {
   type = string
+  default = null
 }
 
 variable "node_instance_types" {
@@ -93,4 +96,19 @@ variable "min_size" {
 variable "max_size" {
   type    = number
   default = 3
+}
+
+
+variable "aws_oidc_provider_arn" {
+  type = string
+  default = null
+}
+
+
+variable "rds_databases" {
+  type = set(string)
+
+  default = [
+    "app"
+  ]
 }

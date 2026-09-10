@@ -1,19 +1,3 @@
-data "tls_certificate" "github" {
-  url = "https://token.actions.githubusercontent.com"
-}
-
-resource "aws_iam_openid_connect_provider" "github" {
-  url = "https://token.actions.githubusercontent.com"
-
-  client_id_list = [
-    "sts.amazonaws.com"
-  ]
-
-  thumbprint_list = [
-    data.tls_certificate.github.certificates[0].sha1_fingerprint
-  ]
-}
-
 resource "aws_iam_role" "github_actions_ecr" {
   name = "github-actions-ecr"
 
@@ -25,7 +9,7 @@ resource "aws_iam_role" "github_actions_ecr" {
         Effect = "Allow"
 
         Principal = {
-          Federated = aws_iam_openid_connect_provider.github.arn
+          Federated = var.aws_oidc_provider_arn
         }
 
         Action = "sts:AssumeRoleWithWebIdentity"

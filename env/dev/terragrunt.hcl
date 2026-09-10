@@ -23,7 +23,8 @@ inputs = {
   private_subnets = ["10.0.2.0/24", "10.0.4.0/24"]
   azs = ["us-east-1a", "us-east-1b"]
 
-  #rds auth-service inputs
+  #RDS
+  rds_databases = ["auth-service","target-service","flag-service"]
   db_username = "teste"
   db_password = "123456678"
   instance_class = "db.t3.micro"
@@ -38,4 +39,7 @@ inputs = {
   #EKS
   cluster_name = "toggle-cluster"
   cluster_version = 1.36
+
+  #ECR
+  aws_oidc_provider_arn = get_env("AWS_OIDC_PROVIDER_ARN")
 }
