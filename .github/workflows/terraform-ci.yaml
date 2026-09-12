@@ -1,9 +1,6 @@
 name: Terraform CI
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
     inputs:
       AWS_OIDC_PROVIDER_ARN:
