@@ -8,6 +8,10 @@ on:
         description: "ARN do papel (role) utilizado pelo GitHub Actions"
         required: true
         type: string
+      AWS_OIDC_PROVIDER_ARN:
+        description: "ARN do OIDC Provider utilizado pelo GitHub Actions"
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -16,7 +20,7 @@ permissions:
 env:
   AWS_REGION: us-east-1
   TF_IN_AUTOMATION: true
-  #AWS_OIDC_PROVIDER_ARN: ${{ secrets.AWS_OIDC_PROVIDER_ARN }}
+  #AWS_OIDC_PROVIDER_ARN: ${{ inputs.AWS_OIDC_PROVIDER_ARN }}
   AWS_ROLE_ARN: ${{ inputs.AWS_ROLE_ARN }}
 
 
