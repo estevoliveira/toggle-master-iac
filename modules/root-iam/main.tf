@@ -7,7 +7,14 @@ data "tls_certificate" "github" {
   url = "https://token.actions.githubusercontent.com"
 }
 
+data "aws_iam_openid_connect_provider" "github" {
+  count = var.create_github_oidc_provider ? 0 : 1
+
+  url = "https://token.actions.githubusercontent.com"
+}
+
 resource "aws_iam_openid_connect_provider" "github" {
+  count = var.create_github_oidc_provider ? 1 : 0
   url = "https://token.actions.githubusercontent.com"
 
   client_id_list = [
@@ -17,6 +24,10 @@ resource "aws_iam_openid_connect_provider" "github" {
   thumbprint_list = [
     data.tls_certificate.github.certificates[0].sha1_fingerprint
   ]
+}
+
+locals {
+  github_oidc_provider_arn = var.create_github_oidc_provider ? aws_iam_openid_connect_provider.github[0].arn : data.aws_iam_openid_connect_provider.github[0].arn
 }
 
 resource "aws_iam_role" "github_actions_terraform" {
@@ -30,7 +41,7 @@ resource "aws_iam_role" "github_actions_terraform" {
         Effect = "Allow"
 
         Principal = {
-          Federated = aws_iam_openid_connect_provider.github.arn
+          Federated = local.github_oidc_provider_arn
         }
 
         Action = "sts:AssumeRoleWithWebIdentity"
@@ -60,7 +71,9 @@ resource "aws_iam_policy" "github_actions_terraform" {
         Effect = "Allow"
 
         Action = [
-          "s3:ListBucket"
+          "s3:ListBucket",
+          "s3:GetBucketVersioning",
+          "s3:GetEncryptionConfiguration"
         ]
 
         Resource = "arn:aws:s3:::challenge3-terraform-state"
