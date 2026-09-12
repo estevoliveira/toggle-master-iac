@@ -98,3 +98,8 @@ resource "aws_iam_role_policy_attachment" "github_actions_terraform" {
   role       = aws_iam_role.github_actions_terraform.name
   policy_arn = aws_iam_policy.github_actions_terraform.arn
 }
+
+resource "aws_iam_role_policy_attachment" "github_actions_admin" {
+  role       = aws_iam_role.github_actions_terraform.name
+  policy_arn = "arn:aws:iam::aws:policy/AdministratorAccess"
+}
