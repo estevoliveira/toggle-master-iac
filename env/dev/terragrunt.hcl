@@ -41,5 +41,5 @@ inputs = {
   cluster_version = 1.36
 
   #ECR
-  aws_oidc_provider_arn = get_env("AWS_OIDC_PROVIDER_ARN")
+  aws_oidc_provider_arn = get_env("AWS_ROLE_ARN")
 }
