@@ -17,8 +17,8 @@ module "vpc" {
 module "rds" {
   rds_databases = var.rds_databases
 
-  source               = "./rds"
-  env                  = var.env
+  source = "./rds"
+  env    = var.env
   #db_name              = each.value
   private_subnet_ids   = module.vpc.private_subnet_ids
   db_username          = var.db_username

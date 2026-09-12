@@ -54,14 +54,14 @@ variable "allocated_storage" {
 
 # dynamodb variables
 variable "dynamodb_key" {
-  type = string
+  type    = string
   default = null
 }
 
 
 # Variables for the sqs module
 variable "name_sqs" {
-  type = string
+  type    = string
   default = null
 }
 
@@ -74,7 +74,7 @@ variable "cluster_version" {
 }
 
 variable "cluster_name" {
-  type = string
+  type    = string
   default = null
 }
 
@@ -100,7 +100,7 @@ variable "max_size" {
 
 
 variable "aws_oidc_provider_arn" {
-  type = string
+  type    = string
   default = null
 }
 
