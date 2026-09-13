@@ -69,5 +69,5 @@ module "eks" {
 module "ecr" {
   source                = "./ecr"
   aws_oidc_provider_arn = var.aws_oidc_provider_arn
-  repositories         = var.repositories
+  repositories          = var.repositories
 }
