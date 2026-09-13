@@ -31,8 +31,9 @@ resource "aws_security_group" "rds_sg" {
 resource "aws_db_instance" "postgres" {
   for_each = var.rds_databases
 
-  identifier             = "${var.env}-${each.value}-db"
+  identifier             = "${var.env}-${each.value}-service-db"
   engine                 = var.db_engine
+  db_name                = "${each.value}_db"
   engine_version         = var.db_engine_version
   instance_class         = var.db_instance_class
   allocated_storage      = var.db_allocated_storage

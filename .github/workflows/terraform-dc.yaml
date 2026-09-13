@@ -19,7 +19,7 @@ permissions:
 env:
   AWS_REGION: us-east-1
   TF_IN_AUTOMATION: true
-  AWS_OIDC_PROVIDER_ARN: ${{ secrets.AWS_OIDC_PROVIDER_ARN }}
+  AWS_OIDC_PROVIDER_ARN: ${{ inputs.AWS_OIDC_PROVIDER_ARN }}
   AWS_ROLE_ARN : ${{ inputs.AWS_ROLE_ARN  }}
 
 jobs:

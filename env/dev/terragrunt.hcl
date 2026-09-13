@@ -24,7 +24,7 @@ inputs = {
   azs = ["us-east-1a", "us-east-1b"]
 
   #RDS
-  rds_databases = ["auth-service","target-service","flag-service"]
+  rds_databases = ["auth","target","flag"]
   db_username = "teste"
   db_password = "123456678"
   instance_class = "db.t3.micro"
