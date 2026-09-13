@@ -112,3 +112,8 @@ variable "rds_databases" {
     "app"
   ]
 }
+
+variable "repositories" {
+  description = "Lista de repositórios ECR"
+  type        = set(string)
+}

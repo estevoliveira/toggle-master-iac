@@ -42,4 +42,5 @@ inputs = {
 
   #ECR
   aws_oidc_provider_arn = get_env("AWS_OIDC_PROVIDER_ARN")
+  repositories = ["toggle-master/analytics-service","toggle-master/auth-service","toggle-master/evaluation-service", "toggle-master/flag-service", "toggle-master/targeting-service"]
 }
