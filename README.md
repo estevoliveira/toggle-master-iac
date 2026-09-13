@@ -249,3 +249,24 @@ terragrunt destroy
 > O `destroy` deve ser utilizado com cuidado, principalmente porque recursos como RDS, ECR e o próprio state podem conter dados importantes.
 
 
+# ⚙️ CI/CD
+
+### Pipeline Terraform-CI
+* Usando a o workflow no Actions: *terraform-CI*, é possivel fazer a validação do projeto terraform e sua estrutura. Basta passar a branch MAIN, o ARN da role e OIDC Provider da conta AWS, exemplo:
+```bash
+AWS_ROLE_ARN
+arn:aws:iam::...:role/github...
+
+AWS_OIDC_PROVIDER_ARN
+arn:aws:iam::...:oidc-provider/...
+```
+
+### Pipeline Terraform-CD
+* Usando a o workflow no Actions: *terraform-CD*, é possivel realizar o deploy da infrastrutura, criando cada recurso e role IAM necesárias para o projeto toggle-master. Basta passar a branch MAIN, o ARN da role e OIDC Provider da conta AWS, exemplo:
+```bash
+AWS_ROLE_ARN
+arn:aws:iam::...:role/github...
+
+AWS_OIDC_PROVIDER_ARN
+arn:aws:iam::...:oidc-provider/...
+```
