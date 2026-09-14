@@ -1,6 +1,6 @@
 # Bucket S3 para armazenar o state remoto (compartilhado)
 resource "aws_s3_bucket" "state" {
-  bucket        = "challenge3-terraform-state"
+  bucket        = "challenge3-terraform-state-v2"
   force_destroy = true
   tags = {
     team = "fiap"
