@@ -15,6 +15,10 @@ on:
         description: "AWS Session Token temporário da AWS Academy"
         required: true
         type: string
+      TF_VAR_BUCKET_NAME:
+        description: "Nome do bucket S3 para armazenar o Terraform state"
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -22,6 +26,7 @@ permissions:
 env:
   AWS_REGION: us-east-1
   TF_IN_AUTOMATION: true
+  TF_VAR_bucket_name: ${{ inputs.TF_VAR_BUCKET_NAME }}
 
 jobs:
   terraform:

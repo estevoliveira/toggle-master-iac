@@ -20,6 +20,10 @@ on:
         description: "Passe o ARN do role do laboratório"
         required: true
         type: string
+      BUCKET_NAME:
+        description: "Nome do bucket S3 para armazenar o Terraform state"
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -28,6 +32,7 @@ env:
   AWS_REGION: us-east-1
   TF_IN_AUTOMATION: true
   LAB_ROLE: ${{ inputs.LAB_ROLE }}
+  BUCKET_NAME: ${{ inputs.BUCKET_NAME }}
 
 jobs:
   terraform:
