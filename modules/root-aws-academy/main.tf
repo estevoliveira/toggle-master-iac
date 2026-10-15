@@ -53,7 +53,7 @@ module "sqs" {
 # EKS
 module "eks" {
   source          = "./eks"
-  lab_role = var.lab_role
+  lab_role        = var.lab_role
   env             = var.env
   cluster_version = var.cluster_version
   cluster_name    = var.cluster_name
@@ -68,6 +68,6 @@ module "eks" {
 
 # ECR
 module "ecr" {
-  source                = "./ecr"
-  repositories          = var.repositories
+  source       = "./ecr"
+  repositories = var.repositories
 }

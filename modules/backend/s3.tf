@@ -4,7 +4,7 @@ variable "bucket_name" {
 }
 # Bucket S3 para armazenar o state remoto (compartilhado)
 resource "aws_s3_bucket" "state" {
-  bucket = var.bucket_name
+  bucket        = var.bucket_name
   force_destroy = true
   tags = {
     team = "fiap"
