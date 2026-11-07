@@ -71,3 +71,15 @@ module "ecr" {
   source       = "./ecr"
   repositories = var.repositories
 }
+
+module "argocd" {
+  source = "./argocd"
+
+  argocd_chart_version = "VERSAO_DO_CHART"
+
+  service_type = "LoadBalancer"
+
+  depends_on = [
+    module.eks
+  ]
+}
