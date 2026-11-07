@@ -127,6 +127,7 @@ jobs:
           aws-session-token: ${{ env.AWS_SESSION_TOKEN }}
           role-to-assume: ${{ env.LAB_ROLE }}
           role-session-name: GitHubActionsTerraformCD
+          role-skip-session-tagging: true
           aws-region: ${{ env.AWS_REGION }}
 
       # --------------------------------------------------
