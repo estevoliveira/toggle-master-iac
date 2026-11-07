@@ -75,7 +75,7 @@ module "ecr" {
 module "argocd" {
   source = "./argocd"
 
-  argocd_chart_version = "VERSAO_DO_CHART"
+  argocd_chart_version = "10.4.2"
 
   service_type = "LoadBalancer"
 
